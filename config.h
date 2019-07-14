@@ -6,7 +6,7 @@
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
 static char *font = "IBM Plex Mono:size=11:antialias=true:autohint=true";
-static int borderpx = 24;
+static int borderpx = 16;
 
 /*
  * What program is execed by st depends of these precedence rules:
@@ -42,8 +42,8 @@ static unsigned int tripleclicktimeout = 600;
 int allowaltscreen = 1;
 
 /* frames per second st should at maximum draw to the screen */
-static unsigned int xfps = 1200;
-static unsigned int actionfps = 30;
+static unsigned int xfps = 120;
+static unsigned int actionfps = 60;
 
 /*
  * blinking timeout (set to 0 to disable blinking) for the terminal blinking
@@ -54,7 +54,7 @@ static unsigned int blinktimeout = 800;
 /*
  * thickness of underline and bar cursors
  */
-static unsigned int cursorthickness = 2;
+static unsigned int cursorthickness = 1;
 
 /*
  * bell volume. It must be a value between -100 and 100. Use 0 for disabling
@@ -82,34 +82,33 @@ char *termname = "st";
  */
 unsigned int tabspaces = 8;
 
-/* Terminal colors (16 first used in escape sequence) */
 static const char *colorname[] = {
- "#3B4252",
- "#BF616A",
- "#A3BE8C",
- "#EBCB8B",
- "#81A1C1",
- "#B48EAD",
- "#88C0D0",
- "#E5E9F0",
- "#4C566A",
- "#BF616A",
- "#A3BE8C",
- "#EBCB8B",
- "#81A1C1",
- "#B48EAD",
- "#8FBCBB",
- "#ECEFF4",
-};
+ "#242223",
+ "#d65f5f",
+ "#899e92",
+ "#ffd787",
+ "#86879a",
+ "#9a758e",
+ "#4e6881",
+ "#d7d7d7",
 
+ "#302e2f",
+ "#eb7270",
+ "#9bb0a4",
+ "#ffea99",
+ "#a5a6ba",
+ "#a7829b",
+ "#5e7891",
+ "#ececec",
+};
 
 /*
  * Default colors (colorname index)
  * foreground, background, cursor, reverse cursor
  */
-unsigned int defaultfg = 4;
+unsigned int defaultfg = 7;
 unsigned int defaultbg = 0;
-static unsigned int defaultcs = 4;
+static unsigned int defaultcs = 7;
 static unsigned int defaultrcs = 0;
 
 /*
@@ -119,7 +118,7 @@ static unsigned int defaultrcs = 0;
  * 6: Bar ("|")
  * 7: Snowman ("☃")
  */
-static unsigned int cursorshape = 2;
+static unsigned int cursorshape = 4;
 
 /*
  * Default columns and rows numbers
