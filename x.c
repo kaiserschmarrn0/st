@@ -681,10 +681,10 @@ xresize(int col, int row)
 	win.tw = MAX(1, col * win.cw);
 	win.th = MAX(1, row * win.ch);
 
-	XFreePixmap(xw.dpy, xw.buf);
+	/*XFreePixmap(xw.dpy, xw.buf);
 	xw.buf = XCreatePixmap(xw.dpy, xw.win, win.w, win.h,
 			DefaultDepth(xw.dpy, xw.scr));
-	XftDrawChange(xw.draw, xw.buf);
+	XftDrawChange(xw.draw, xw.buf);*/
 	xclear(0, 0, win.w, win.h);
 
 	/* resize to new width */
@@ -1043,7 +1043,7 @@ xinit(int cols, int rows)
 	gcvalues.graphics_exposures = False;
 	dc.gc = XCreateGC(xw.dpy, parent, GCGraphicsExposures,
 			&gcvalues);
-	xw.buf = XCreatePixmap(xw.dpy, xw.win, win.w, win.h,
+	xw.buf = XCreatePixmap(xw.dpy, xw.win, DisplayWidth(xw.dpy, xw.scr), DisplayHeight(xw.dpy, xw.scr),
 			DefaultDepth(xw.dpy, xw.scr));
 	XSetForeground(xw.dpy, dc.gc, dc.col[defaultbg].pixel);
 	XFillRectangle(xw.dpy, xw.buf, dc.gc, 0, 0, win.w, win.h);
